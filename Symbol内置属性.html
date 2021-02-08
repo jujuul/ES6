@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol内置属性</title>
+</head>
+
+<body>
+    <script>
+        // class Person {
+        //     static[Symbol.hasInstance](param) {
+        //         console.log(param)
+        //         console.log('我被用来检测类型了')
+        //         return false
+        //     }
+        // }
+
+        // let o = {}
+        // console.log(o instanceof Person)
+
+        const arr = [1, 2, 3]
+        const arr2 = [4, 5, 6]
+        arr2[Symbol.isConcatSpreadable] = false
+        console.log(arr.concat(arr2))
+        let arr3 = arr.concat(arr2)
+        console.log(arr3)
+        console.log(arr3[3])
+        arr3[3].forEach(item => {
+            console.log(item)
+        });
+    </script>
+</body>
+
+</html>
